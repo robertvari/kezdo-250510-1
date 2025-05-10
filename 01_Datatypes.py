@@ -18,3 +18,7 @@ False
 'Csaba'
 'It\'s my birthday.'
 "It's my birthday"
+
+# lists
+[1, 2, 3, 4]
+["Robert", "Csaba", "Tamás"]
