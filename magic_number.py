@@ -11,9 +11,17 @@ while True:
     tries = 3
 
     # computer guess
-    magic_number = 5
+    magic_number = str( 5 )
 
     # get player guess
+    player_guess = input("Your number: ")
+
+    while magic_number != player_guess:
+        tries -=1
+        if tries == 0: break
+        
+        print(f"Wrong guess. You have {tries} tries left. Try again.")
+        player_guess = input("Your number: ")
 
     player_response = input("Do you want to play again? (y/n)")
     if player_response == "n": break
