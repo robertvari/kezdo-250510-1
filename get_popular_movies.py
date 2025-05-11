@@ -4,7 +4,10 @@ tmdb.API_KEY = '83cbec0139273280b9a3f8ebc9e35ca9'
 
 movies = tmdb.Movies()
 
-for page in range(1, 11):
+# empty dictionary that we can fill out in the for loop
+my_movie_db = {}
+
+for page in range(1, 2):
     print("-"*50, f"Current page: {page}", "-"*50)
     # get popular movies for current page
     popular_movies = movies.popular(page=page)
@@ -12,7 +15,15 @@ for page in range(1, 11):
     # get movie list from the dictionary
     movie_list = popular_movies["results"]
 
-    # step through the movie list
+    # nested for loop
+    # step through the movie list on this page
     for movie in movie_list:
         # because movie is a dictionary we can get the title
-        print(movie["title"])
+        my_movie_db[movie["id"]] = {
+            "title": movie["title"], 
+            "release_date": movie["release_date"],
+            "vote_average": movie["vote_average"],
+            "overview": movie["overview"]
+            }
+
+
