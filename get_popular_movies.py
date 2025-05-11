@@ -1,5 +1,5 @@
 import tmdbsimple as tmdb
-import pprint
+import pprint, json
 tmdb.API_KEY = '83cbec0139273280b9a3f8ebc9e35ca9'
 
 movies = tmdb.Movies()
@@ -7,7 +7,7 @@ movies = tmdb.Movies()
 # empty dictionary that we can fill out in the for loop
 my_movie_db = {}
 
-for page in range(1, 2):
+for page in range(1, 20):
     print("-"*50, f"Current page: {page}", "-"*50)
     # get popular movies for current page
     popular_movies = movies.popular(page=page)
@@ -27,3 +27,6 @@ for page in range(1, 2):
             }
 
 
+# cache my_movie_db into a file
+with open("movie_data.json", "w") as file:
+    json.dump(my_movie_db, file)
