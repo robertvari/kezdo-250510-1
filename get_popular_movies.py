@@ -10,8 +10,8 @@ if os.path.exists("movie_data.json"):
         pprint.pprint(movie_data)
 
 
-else:  
-    # connect to TMDB and cache data
+# connect to TMDB and cache data
+else:    
     movies = tmdb.Movies()
 
     # empty dictionary that we can fill out in the for loop
