@@ -40,5 +40,5 @@ while True:
 
     player_response = input("Do you want to play again? (y/n)")
     if player_response == "n":
-        os.system("cls") 
+        os.system("cls")
         break
