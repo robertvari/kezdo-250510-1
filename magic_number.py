@@ -39,4 +39,6 @@ while True:
         print("You lost this round")
 
     player_response = input("Do you want to play again? (y/n)")
-    if player_response == "n": break
+    if player_response == "n":
+        os.system("cls") 
+        break
